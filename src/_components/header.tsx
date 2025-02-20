@@ -3,11 +3,16 @@
 import styled from "styled-components";
 import Image from "next/image";
 import porsche from "@/public/assets/logo/porsche.svg";
-import { useState } from "react";
 
-export default function Header() {
-  const [selectedLanguage, setSelectedLanguage] = useState<"KO" | "EN">("EN");
+interface Props {
+  setSelectedLanguage: React.Dispatch<React.SetStateAction<"KO" | "EN">>;
+  selectedLanguage: "EN" | "KO";
+}
 
+export default function Header({
+  selectedLanguage,
+  setSelectedLanguage,
+}: Props) {
   return (
     <>
       <Wrapper>
